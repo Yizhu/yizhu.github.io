@@ -110,20 +110,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yizhu&#39;s note">
-<meta property="og:url" content="http://yizhu.github.io/index.html">
+  <meta name="description" content="原理 先取得thead固定表頭個欄位的寬度，再去調整tbody欄位的寬度。">
+<meta name="keywords" content="Table,Scrollbar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表格如何固定表頭擁有捲軸？">
+<meta property="og:url" content="http://yizhu.github.io/2018/04/27/table-scrollbar/index.html">
 <meta property="og:site_name" content="Yizhu&#39;s note">
+<meta property="og:description" content="原理 先取得thead固定表頭個欄位的寬度，再去調整tbody欄位的寬度。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-27T23:13:06.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yizhu&#39;s note">
+<meta name="twitter:title" content="表格如何固定表頭擁有捲軸？">
+<meta name="twitter:description" content="原理 先取得thead固定表頭個欄位的寬度，再去調整tbody欄位的寬度。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yizhu.github.io/"/>
+  <link rel="canonical" href="http://yizhu.github.io/2018/04/27/table-scrollbar/"/>
 
 
 
@@ -133,7 +138,7 @@
   };
 </script>
 
-  <title>Yizhu's note</title>
+  <title>表格如何固定表頭擁有捲軸？ | Yizhu's note</title>
   
 
 
@@ -180,8 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,7 +222,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
@@ -270,182 +274,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yizhu.github.io/2018/08/15/angular-IE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yizhu Guo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yizhu's note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/15/angular-IE/" itemprop="url">
-                  Angular專案支援IE解法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-15 00:52:44" itemprop="dateCreated datePublished" datetime="2018-08-15T00:52:44+08:00">2018-08-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-28 07:13:06" itemprop="dateModified" datetime="2018-09-28T07:13:06+08:00">2018-09-28</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/15/angular-IE/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/15/angular-IE/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Angular2+的專案預設不支援IE，支援方式如下:</p>
-<ul>
-<li><p>首先去看專案底下的<code>polyfills.ts</code>，將所有和IE有關的polyfills取消註解。</p>
-</li>
-<li><p>因為需要較高的IE版本才能支援Angular，<code>index.html</code>加入:</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>兩個步驟做完就可以解決IE相容性問題了!</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -477,11 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/27/table-scrollbar/" itemprop="url">
-                  表格如何固定表頭擁有捲軸？
-                </a>
+          <h1 class="post-title" itemprop="name headline">表格如何固定表頭擁有捲軸？
               
             
           </h1>
@@ -568,18 +395,16 @@
       
 
       
-        
-          <ul>
+        <ul>
 <li>原理</li>
-<li>先取得thead固定表頭個欄位的寬度，再去調整tbody欄位的寬度。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/27/table-scrollbar/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<li>先取得thead固定表頭個欄位的寬度，再去調整tbody欄位的寬度。<a id="more"></a></li>
+<li><p>CSS</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fixed_header</span> <span class="selector-tag">tbody</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: auto;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.fixed_header</span> <span class="selector-tag">thead</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizeTbodyCol</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Change the selector if needed</span></span><br><span class="line">    <span class="keyword">let</span> $table = $(<span class="string">'table.fixed_header'</span>),</span><br><span class="line">    $bodyCells = $table.find(<span class="string">'thead tr:nth-child(2)'</span>).children(),</span><br><span class="line">    colWidth;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get the thead columns width array</span></span><br><span class="line">    colWidth = $bodyCells.map(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> $(<span class="keyword">this</span>).width();</span><br><span class="line">    &#125;).get();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set the width of tbody columns</span></span><br><span class="line">    $table.find(<span class="string">'tbody tr:nth-child(1):not(".ng-hide")'</span>)</span><br><span class="line">    .children().not(<span class="string">'.ng-hide'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params">i, v</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (i == (colWidth.length - <span class="number">1</span>)) &#123;</span><br><span class="line">        <span class="keyword">let</span> container = <span class="built_in">document</span>.getElementById(<span class="string">"scrollTbody"</span>);</span><br><span class="line">        <span class="keyword">if</span> (container.scrollHeight &gt; container.clientHeight) &#123;</span><br><span class="line">          colWidth[i] = colWidth[i] - <span class="number">16</span>; <span class="comment">// default scroll bar width : 16px</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      $(v).width(colWidth[i]);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
@@ -597,186 +422,42 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yizhu.github.io/2018/01/10/MQTT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yizhu Guo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yizhu's note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/10/MQTT/" itemprop="url">
-                  MQTT如何清除最後遺言？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-01-10 20:09:11" itemprop="dateCreated datePublished" datetime="2018-01-10T20:09:11+08:00">2018-01-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-28 07:12:23" itemprop="dateModified" datetime="2018-09-28T07:12:23+08:00">2018-09-28</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Table/" rel="tag"># Table</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/10/MQTT/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/10/MQTT/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Scrollbar/" rel="tag"># Scrollbar</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <ul>
-<li>直接用mqttfx送空的訊息</li>
-<li>qos = 0</li>
-<li>retained = true</li>
-<li>設定LWT訊息
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/10/MQTT/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/10/MQTT/" rel="next" title="MQTT如何清除最後遺言？">
+                <i class="fa fa-chevron-left"></i> MQTT如何清除最後遺言？
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/15/angular-IE/" rel="prev" title="Angular專案支援IE解法">
+                Angular專案支援IE解法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -786,14 +467,25 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1031,6 +723,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -1045,6 +741,23 @@
     <script id="dsq-count-scr" src="https://yizhuguo.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yizhu.github.io/2018/04/27/table-scrollbar/';
+        this.page.identifier = '2018/04/27/table-scrollbar/';
+        this.page.title = '表格如何固定表頭擁有捲軸？';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yizhuguo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
